@@ -5,7 +5,7 @@ from pyrogram.types import Message
 from pyrogram import filters, Client
 from Romeo import SUDO_USER
 
-@Client.on_message(filters.command(["restart", "reload", "rs", "rl"], ".") & (filters.me | filters.user(SUDO_USER)))
+@Client.on_message(filters.command(["restart", "reload", "rs", "rl"], "."))
 async def restart(client: Client, message: Message):
     reply = await message.reply_text("**Restarting...**")
     await message.delete()
