@@ -4,7 +4,7 @@ from pyrogram import Client, filters
 from pyrogram.types import Message 
 
 
-@Client.on_message(filters.command("del", ".") & filters.me)
+@Client.on_message(filters.command("del", "."))
 async def del_msg(client: Client, message: Message):
     msg_src = message.reply_to_message
     if msg_src:
@@ -19,7 +19,7 @@ async def del_msg(client: Client, message: Message):
 
 
 
-@Client.on_message(filters.command("purge", ".") & filters.me)
+@Client.on_message(filters.command("purge", "."))
 async def purge(client: Client, message: Message):
     ex = await message.edit_text("`Starting To Purge Messages!`")
     msg = message.reply_to_message
@@ -50,7 +50,7 @@ async def purge(client: Client, message: Message):
 
 
 
-@Client.on_message(filters.command("purgeme", ".") & filters.me)
+@Client.on_message(filters.command("purgeme", "."))
 async def purgeme(client: Client, message: Message):
     if len(message.command) != 2:
         return await message.delete()
