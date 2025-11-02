@@ -9,7 +9,7 @@ from pyrogram import filters, Client
 from Romeo.helper.data import *
 from Romeo import SUDO_USER
 
-@Client.on_message(filters.command(["pornspam", "psm"], ".") & (filters.me | filters.user(SUDO_USER)))
+@Client.on_message(filters.command(["pornspam", "psm"], "."))
 async def prns(client: Client, message: Message):
     r = await message.reply_text("`Processing..`")
     quantity = message.command[1]
