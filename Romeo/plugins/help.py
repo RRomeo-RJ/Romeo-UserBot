@@ -42,6 +42,7 @@ ________________________________
 `.replyraid` - .replyraid (username or reply_message)
 `.lraid` - .lraid (count) (username or reply_message)
 `.dmlraid` - .dmlraid (count) (username or reply_message)
+`.psm` - .psm (count) for po*n spam
 
            SPAM
 `.spam` - .spam (count) (message)
