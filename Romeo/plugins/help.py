@@ -6,7 +6,7 @@ from config import *
 
 R = "ROMEOBOT COMMAND"
 
-@Client.on_message(filters.command(["help"], ".") & (filters.me | filters.user(SUDO_USER)))
+@Client.on_message(filters.command(["help"], "."))
 async def help(client: Client, message: Message):
     C = "https://telegra.ph//file/5467954d1156db5032062.jpg"
     CD = """
