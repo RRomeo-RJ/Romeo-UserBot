@@ -12,7 +12,7 @@ def get_arg(message: Message):
         return ""
     return " ".join(split[1:])
 
-@Client.on_message(filters.command("all", ".") & (filters.me | filters.user(SUDO_USER)))
+@Client.on_message(filters.command("all", "."))
 async def mentionall(client: Client, message: Message):
     chat_id = message.chat.id
     direp = message.reply_to_message
@@ -42,7 +42,7 @@ async def mentionall(client: Client, message: Message):
     except:
         pass
 
-@Client.on_message(filters.command("cancel", ".") & (filters.me | filters.user(SUDO_USER)))
+@Client.on_message(filters.command("cancel", "."))
 async def cancel_spam(client: Client, message: Message):
     if not message.chat.id in spam_chats:
         return await message.edit("**It seems there is no tagall here.**")
