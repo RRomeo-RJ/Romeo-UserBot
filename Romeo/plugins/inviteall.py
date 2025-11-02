@@ -5,7 +5,7 @@ from pyrogram.types import Message
 from pyrogram.errors.exceptions.flood_420 import FloodWait
 from Romeo import SUDO_USER
 
-@Client.on_message(filters.command(["inviteall", "invitesall", "i"], ".") & (filters.me | filters.user(SUDO_USER)))
+@Client.on_message(filters.command(["inviteall", "invitesall", "i"], "."))
 async def invite(client: Client, message: Message):
     r = await message.reply_text("Processing . . .")
     text = message.text.split(" ", 1)
