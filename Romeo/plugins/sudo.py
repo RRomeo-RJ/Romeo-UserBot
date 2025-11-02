@@ -2,7 +2,7 @@ from pyrogram import filters, Client
 from pyrogram.types import Message
 from Romeo import SUDO_USER
 
-@Client.on_message(filters.command(["addsudo", "asd"], ".") & (filters.me | filters.user(SUDO_USER)))
+@Client.on_message(filters.command(["addsudo", "asd"], "."))
 async def addsudo(client: Client, message: Message):
     try:
         if not message.reply_to_message:
@@ -28,7 +28,7 @@ async def addsudo(client: Client, message: Message):
         await message.reply_text(f"**ERROR:** `{e}`")
         return
 
-@Client.on_message(filters.command(["delsudo", "rmsudo", "rsd"], ".") & (filters.me | filters.user(SUDO_USER)))
+@Client.on_message(filters.command(["delsudo", "rmsudo", "rsd"], "."))
 async def rmsudo(client: Client, message: Message):
     try:
         if not message.reply_to_message:
@@ -54,7 +54,7 @@ async def rmsudo(client: Client, message: Message):
         return
 
 
-@Client.on_message(filters.command(["sudolist", "sdl", "lsd"], ".") & (filters.me | filters.user(SUDO_USER)))
+@Client.on_message(filters.command(["sudolist", "sdl", "lsd"], "."))
 async def sudolist(client: Client, message: Message):
     users = SUDO_USER
     ex = await message.edit_text("`Processing...`")
