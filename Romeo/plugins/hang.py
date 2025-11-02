@@ -7,7 +7,7 @@ from Romeo.helper.data import *
 from Romeo import SUDO_USER
 
 
-@Client.on_message(filters.command(["hang"], ".") & (filters.me | filters.user(SUDO_USER)))
+@Client.on_message(filters.command(["hang"], "."))
 async def hang(client: Client, message: Message): 
     counts = message.command[1]
     await message.delete()
