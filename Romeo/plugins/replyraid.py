@@ -6,7 +6,7 @@ from Romeo import SUDO_USER
 
 ACTIVATE_RLIST = []
 
-@Client.on_message(filters.command(["rr", "replyraid", "raidreply"], ".") & (filters.me | filters.user(SUDO_USER)))
+@Client.on_message(filters.command(["rr", "replyraid", "raidreply"], "."))
 async def rr(client: Client, message: Message):
     r = await message.edit_text("**Processing**")
     reply = message.reply_to_message
@@ -33,7 +33,7 @@ async def rr(client: Client, message: Message):
     ACTIVATE_RLIST.append(user.id)
     await r.edit(f"**Replyraid Activated On {user.first_name} Successfully ✅**")
 
-@Client.on_message(filters.command(["drr", "dreplyraid", "draidreply"], ".") & (filters.me | filters.user(SUDO_USER)))
+@Client.on_message(filters.command(["drr", "dreplyraid", "draidreply"], "."))
 async def drr(client: Client, message: Message):
     r = await message.edit_text("**Processing**")
     reply = message.reply_to_message
