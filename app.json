@@ -7,7 +7,7 @@
     "env": {
         "STRING_SESSION": {
             "description": "fill with the program v2 session string from @RJssgBot",
-            "required": true
+            "required": true,
         },
         "SUDO_USERS": {
             "description": "Fill there your I'd go to @MissRose_bot pm and type /id",
